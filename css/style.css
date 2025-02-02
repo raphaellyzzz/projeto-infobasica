@@ -1,0 +1,152 @@
+:root {
+    --branco: #ffffff;
+    --cinza-claro: #f0f0f0;
+    --verde-claro: #a8e6a1;
+    --verde-escuro: #4caf50;
+    --preto: #000000;
+} /*cores que vão ser usadas em todo o site */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*aplicar as mesmas regras pra todos os elemento */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--branco);
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--cinza-claro);
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--verde-escuro);
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover {
+    background-color: var(--verde-claro);
+}
+
+nav ul li a:active {
+    transform: scale(1.1);
+}
+
+nav ul li:last-child {
+    margin-left: auto;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    padding: 20px;
+    flex: 1;
+}
+
+.intro {
+    background-color: var(--cinza-claro);
+    padding: 20px;
+    width: 60%;
+    text-align: center;
+    border-radius: 10px;
+    margin: auto; 
+}
+
+footer {
+    background-color: var(--preto);
+    color: var(--branco);
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* animacoes para o js */
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+nav ul li a:active i {
+    animation: jump 0.1s ease-in-out;
+}
+
+nav ul li a i {
+    margin-right: 5px; 
+    transition: transform 0.5s;
+}
+
+nav ul li a:hover {
+    background-color: var(--verde-claro);
+}
+
+nav ul li a:hover i {
+    transform: scale(1.4);
+}
+
+/* responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .intro {
+        width: 90%;
+    }
+}
+
+/* para botão do simulador */
+.btn-simulador {
+    padding: 15px 30px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.btn-simulador:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.btn-simulador:active {
+    transform: scale(0.98);
+}
