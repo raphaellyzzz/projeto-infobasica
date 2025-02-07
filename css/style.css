@@ -4,35 +4,69 @@
     --verde-claro: #a8e6a1;
     --verde-escuro: #4caf50;
     --preto: #000000;
-} /*cores que vão ser usadas em todo o site */
+    --azul-escuro: #0056b3;
+    --text-color: #333;
+}
 
+/* Resetando margens e padding para todos os elementos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-/*aplicar as mesmas regras pra todos os elemento */
 
+/* Estilo global */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-}
-
-body {
     font-family: Arial, sans-serif;
     background-color: var(--branco);
-    color: #333;
-    line-height: 1.6;
+    color: var(--text-color);
+    line-height: 1.8;
+    font-size: 18px;
     display: flex;
     flex-direction: column;
 }
 
-header {
-    background-color: var(--cinza-claro);
-    padding: 10px 0;
+/* Botões de aumento e diminuição de fonte */
+.font-size-controls {
+    text-align: center;
+    margin: 10px 0;
 }
 
+.font-size-controls button {
+    font-size: 18px;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+}
+
+.font-size-controls button:hover {
+    background-color: var(--verde-claro);
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--cinza-claro);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+}
+
+/* Ícone de menu hambúrguer */
+#menu-toggle {
+    display: none;
+    font-size: 30px;
+    color: var(--verde-escuro);
+    cursor: pointer;
+}
+
+/* Navegação */
 nav ul {
     list-style: none;
     display: flex;
@@ -48,11 +82,13 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     color: var(--verde-escuro);
-    font-size: 18px;
-    padding: 10px 20px;
+    font-size: 20px;
+    padding: 12px 24px;
+    border-radius: 5px;
     transition: background-color 0.3s, transform 0.2s;
 }
 
+/* Hover e efeito de clique nos links */
 nav ul li a:hover {
     background-color: var(--verde-claro);
 }
@@ -61,92 +97,177 @@ nav ul li a:active {
     transform: scale(1.1);
 }
 
-nav ul li:last-child {
-    margin-left: auto;
+/* Navegação responsiva */
+nav.open ul {
+    display: block;
 }
 
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    nav.open ul {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+}
+
+/* Main */
 main {
     display: flex;
     justify-content: center;
-    align-items: flex-start; 
+    align-items: flex-start;
     padding: 20px;
     flex: 1;
 }
 
+/* Seção de introdução */
 .intro {
     background-color: var(--cinza-claro);
     padding: 20px;
     width: 60%;
     text-align: center;
     border-radius: 10px;
-    margin: auto; 
+    margin: auto;
 }
 
+/* Rodapé */
 footer {
     background-color: var(--preto);
     color: var(--branco);
     text-align: center;
     padding: 10px 0;
+    font-size: 16px;
+    border-top: 1px solid #ddd;
 }
 
-/* animacoes para o js */
-@keyframes jump {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+footer a {
+    color: var(--azul-escuro);
+    text-decoration: none;
 }
 
-nav ul li a:active i {
-    animation: jump 0.1s ease-in-out;
+footer a:hover {
+    color: var(--verde-escuro);
 }
 
-nav ul li a i {
-    margin-right: 5px; 
-    transition: transform 0.5s;
+/* Links */
+a {
+    color: var(--azul-escuro);
+    text-decoration: underline;
+    transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
+a:hover {
+    color: var(--verde-escuro);
+}
+
+/* Ajustes de contraste e legibilidade */
+section, .intro {
+    background-color: var(--cinza-claro);
+    color: var(--text-color);
+    border-radius: 10px;
+}
+
+/* Simulação de Caixa de Entrada */
+.inbox {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: var(--branco);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inbox h2 {
+    font-size: 24px;
+    color: var(--azul-escuro);
+    margin-bottom: 15px;
+}
+
+.inbox .email-list {
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.inbox .email-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inbox .email-item .subject {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.inbox .email-item .sender {
+    font-size: 16px;
+    color: #666;
+}
+
+.inbox .email-item .date {
+    font-size: 14px;
+    color: #888;
+}
+
+.inbox .email-item:hover {
+    background-color: #e6f7ff;
+    cursor: pointer;
+}
+
+/* Botões */
+.button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.button:hover {
     background-color: var(--verde-claro);
 }
 
-nav ul li a:hover i {
-    transform: scale(1.4);
-}
-
-/* responsividade */
+/* Responsividade: Ajustes para telas menores */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
-
     .intro {
         width: 90%;
+        padding: 15px;
     }
-}
 
-/* para botão do simulador */
-.btn-simulador {
-    padding: 15px 30px;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 18px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
-}
+    .font-size-controls button {
+        font-size: 16px;
+    }
 
-.btn-simulador:hover {
-    background-color: #45a049;
-    transform: scale(1.05);
-}
-
-.btn-simulador:active {
-    transform: scale(0.98);
+    .intro, footer {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 }
