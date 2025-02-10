@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quiz sobre o Gmail">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="../img/gmail_icon.png">
+    <title>Quiz de Gmail</title>
+    <style>
+        :root {
+            --branco: #ffffff;
+            --cinza-claro: #f0f0f0;
+            --verde-claro: #a8e6a1;
+            --verde-escuro: #4caf50;
+            --preto: #000000;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--cinza-claro);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--branco);
+            color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        #home {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        #home:hover {
+            text-decoration: underline;
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options li {
+            margin-bottom: 10px;
+        }
+
+        .button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .score {
+            font-size: 20px;
+            color: green;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Quiz sobre o Gmail</h1>
+        <a href="gmail.html" id="gmail"><i class="fas fa-envelope"></i>Voltar ao tutorial!</a>
+    </header>
+
+    <div class="quiz-container">
+        <div class="question">Qual é o limite de armazenamento de e-mails no Gmail?</div>
+        <ul class="options">
+            <li><input type="radio" id="option1" name="answer1" value="A"><label for="option1">15 GB</label></li>
+            <li><input type="radio" id="option2" name="answer1" value="B"><label for="option2">25 GB</label></li>
+            <li><input type="radio" id="option3" name="answer1" value="C"><label for="option3">50 GB</label></li>
+        </ul>
+        <button class="button" onclick="checkAnswer('answer1', 'A', '15 GB')">Verificar Resposta</button>
+        <div class="result" id="result1"></div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="question">O que significa a sigla "Gmail"?</div>
+        <ul class="options">
+            <li><input type="radio" id="option1" name="answer2" value="A"><label for="option1">Google Mail</label></li>
+            <li><input type="radio" id="option2" name="answer2" value="B"><label for="option2">Global Mail</label></li>
+            <li><input type="radio" id="option3" name="answer2" value="C"><label for="option3">Gigabyte Mail</label></li>
+        </ul>
+        <button class="button" onclick="checkAnswer('answer2', 'A', 'Google Mail')">Verificar Resposta</button>
+        <div class="result" id="result2"></div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="question">Qual é a funcionalidade do Google Hangouts no Gmail?</div>
+        <ul class="options">
+            <li><input type="radio" id="option1" name="answer3" value="A"><label for="option1">Envio de mensagens instantâneas</label></li>
+            <li><input type="radio" id="option2" name="answer3" value="B"><label for="option2">Armazenamento de e-mails</label></li>
+            <li><input type="radio" id="option3" name="answer3" value="C"><label for="option3">Agendamento de e-mails</label></li>
+        </ul>
+        <button class="button" onclick="checkAnswer('answer3', 'A', 'Envio de mensagens instantâneas')">Verificar Resposta</button>
+        <div class="result" id="result3"></div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="question">Onde você pode encontrar os e-mails enviados no Gmail?</div>
+        <ul class="options">
+            <li><input type="radio" id="option1" name="answer4" value="A"><label for="option1">Na Caixa de Entrada</label></li>
+            <li><input type="radio" id="option2" name="answer4" value="B"><label for="option2">Na Caixa de Saída</label></li>
+            <li><input type="radio" id="option3" name="answer4" value="C"><label for="option3">Na Lixeira</label></li>
+        </ul>
+        <button class="button" onclick="checkAnswer('answer4', 'B', 'Na Caixa de Saída')">Verificar Resposta</button>
+        <div class="result" id="result4"></div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="question">Qual é a função de "CC" em um e-mail no Gmail?</div>
+        <ul class="options">
+            <li><input type="radio" id="option1" name="answer5" value="A"><label for="option1">Cópia para outras pessoas</label></li>
+            <li><input type="radio" id="option2" name="answer5" value="B"><label for="option2">Colocar e-mail em espera</label></li>
+            <li><input type="radio" id="option3" name="answer5" value="C"><label for="option3">Confirmar o recebimento do e-mail</label></li>
+        </ul>
+        <button class="button" onclick="checkAnswer('answer5', 'A', 'Cópia para outras pessoas')">Verificar Resposta</button>
+        <div class="result" id="result5"></div>
+    </div>
+
+    <div class="score" id="score"></div>
+
+    <script>
+        let score = 0;
+
+        function checkAnswer(questionName, correctAnswer, correctText) {
+            var resultElement = document.getElementById("result" + questionName.charAt(questionName.length - 1));
+            var selectedOption = document.querySelector('input[name="' + questionName + '"]:checked');
+            
+            if (!selectedOption) {
+                resultElement.innerHTML = "Por favor, selecione uma resposta.";
+                resultElement.style.color = "red";
+                return;
+            }
+
+            if (selectedOption.value === correctAnswer) {
+                resultElement.innerHTML = "Resposta correta! " + correctText;
+                resultElement.style.color = "green";
+                score++;
+            } else {
+                resultElement.innerHTML = "Resposta incorreta. A resposta correta é: " + correctText;
+                resultElement.style.color = "red";
+            }
+
+            document.getElementById("score").innerHTML = "Sua pontuação: " + score + " de 5";
+        }
+    </script>
+
+</body>
+</html>
