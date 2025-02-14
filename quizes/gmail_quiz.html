@@ -104,61 +104,95 @@
     <header>
         <h1>Quiz sobre o Gmail</h1>
         <a href="../tutorials/gmail.html" id="gmail"><i class="fas fa-envelope"></i>Voltar ao tutorial!</a>
+        <a href="../tutorials/powerpoint.html" id="powerpoint"><i class="fas fa-file-powerpoint"></i> Seguir para PowerPoint</a>
     </header>
 
     <div class="quiz-container">
-        <div class="question">Qual é o limite de armazenamento de e-mails no Gmail?</div>
+        <div class="question">O que é a internet e como ela funciona?</div>
         <ul class="options">
-            <li><input type="radio" id="option1" name="answer1" value="A"><label for="option1">15 GB</label></li>
-            <li><input type="radio" id="option2" name="answer1" value="B"><label for="option2">25 GB</label></li>
-            <li><input type="radio" id="option3" name="answer1" value="C"><label for="option3">50 GB</label></li>
+            <li><input type="radio" id="option1" name="answer1" value="A"><label for="option1">É uma rede global que conecta computadores e dispositivos, permitindo o acesso a informações, comunicação e serviços. Ela funciona por meio de conexões (Wi-Fi ou cabo) e URLs (endereços de sites).</label></li>
+            <li><input type="radio" id="option2" name="answer1" value="B"><label for="option2">Um sistema de emails que conecta pessoas no mundo todo.</label></li>
+            <li><input type="radio" id="option3" name="answer1" value="C"><label for="option3">Uma plataforma de redes sociais usada globalmente.</label></li>
         </ul>
-        <button class="button" onclick="checkAnswer('answer1', 'A', '15 GB')">Verificar Resposta</button>
+        <button class="button" onclick="checkAnswer('answer1', 'A', 'É uma rede global que conecta computadores e dispositivos, permitindo o acesso a informações, comunicação e serviços. Ela funciona por meio de conexões (Wi-Fi ou cabo) e URLs (endereços de sites).')">Verificar Resposta</button>
         <div class="result" id="result1"></div>
     </div>
-
+    
     <div class="quiz-container">
-        <div class="question">O que significa a sigla "Gmail"?</div>
+        <div class="question">Quais são os navegadores mais populares para acessar a internet?</div>
         <ul class="options">
-            <li><input type="radio" id="option1" name="answer2" value="A"><label for="option1">Google Mail</label></li>
-            <li><input type="radio" id="option2" name="answer2" value="B"><label for="option2">Global Mail</label></li>
-            <li><input type="radio" id="option3" name="answer2" value="C"><label for="option3">Gigabyte Mail</label></li>
+            <li><input type="radio" id="option1" name="answer2" value="A"><label for="option1">Internet Explorer, Netscape, AOL.</label></li>
+            <li><input type="radio" id="option2" name="answer2" value="B"><label for="option2">Google Chrome, Mozilla Firefox, Microsoft Edge e Safari.</label></li>
+            <li><input type="radio" id="option3" name="answer2" value="C"><label for="option3">Opera, Konqueror, Lynx.</label></li>
         </ul>
-        <button class="button" onclick="checkAnswer('answer2', 'A', 'Google Mail')">Verificar Resposta</button>
+        <button class="button" onclick="checkAnswer('answer2', 'B', 'Google Chrome, Mozilla Firefox, Microsoft Edge e Safari.')">Verificar Resposta</button>
         <div class="result" id="result2"></div>
     </div>
-
+    
     <div class="quiz-container">
-        <div class="question">Qual é a funcionalidade do Google Hangouts no Gmail?</div>
+        <div class="question">Como identificar se um site é seguro?</div>
         <ul class="options">
-            <li><input type="radio" id="option1" name="answer3" value="A"><label for="option1">Envio de mensagens instantâneas</label></li>
-            <li><input type="radio" id="option2" name="answer3" value="B"><label for="option2">Armazenamento de e-mails</label></li>
-            <li><input type="radio" id="option3" name="answer3" value="C"><label for="option3">Agendamento de e-mails</label></li>
+            <li><input type="radio" id="option1" name="answer3" value="A"><label for="option1">Se ele carrega rapidamente.</label></li>
+            <li><input type="radio" id="option2" name="answer3" value="B"><label for="option2">Se o endereço começa com https: e há um cadeado na barra de endereços.</label></li>
+            <li><input type="radio" id="option3" name="answer3" value="C"><label for="option3">Se o site possui muitas propagandas.</label></li>
         </ul>
-        <button class="button" onclick="checkAnswer('answer3', 'A', 'Envio de mensagens instantâneas')">Verificar Resposta</button>
+        <button class="button" onclick="checkAnswer('answer3', 'B', 'Se o endereço começa com https: e há um cadeado na barra de endereços.')">Verificar Resposta</button>
         <div class="result" id="result3"></div>
     </div>
-
+    
     <div class="quiz-container">
-        <div class="question">Onde você pode encontrar os e-mails enviados no Gmail?</div>
+        <div class="question">O que é o protocolo HTTPS e por que ele é importante?</div>
         <ul class="options">
-            <li><input type="radio" id="option1" name="answer4" value="A"><label for="option1">Na Caixa de Entrada</label></li>
-            <li><input type="radio" id="option2" name="answer4" value="B"><label for="option2">Na Caixa de Saída</label></li>
-            <li><input type="radio" id="option3" name="answer4" value="C"><label for="option3">Na Lixeira</label></li>
+            <li><input type="radio" id="option1" name="answer4" value="A"><label for="option1">É a versão segura do HTTP, que criptografa os dados enviados entre o navegador e o servidor.</label></li>
+            <li><input type="radio" id="option2" name="answer4" value="B"><label for="option2">É um protocolo de rede para comunicação rápida.</label></li>
+            <li><input type="radio" id="option3" name="answer4" value="C"><label for="option3">É uma ferramenta de criação de sites.</label></li>
         </ul>
-        <button class="button" onclick="checkAnswer('answer4', 'B', 'Na Caixa de Saída')">Verificar Resposta</button>
+        <button class="button" onclick="checkAnswer('answer4', 'A', 'É a versão segura do HTTP, que criptografa os dados enviados entre o navegador e o servidor.')">Verificar Resposta</button>
         <div class="result" id="result4"></div>
     </div>
-
+    
     <div class="quiz-container">
-        <div class="question">Qual é a função de "CC" em um e-mail no Gmail?</div>
+        <div class="question">Quais são os passos básicos para criar uma conta no Gmail?</div>
         <ul class="options">
-            <li><input type="radio" id="option1" name="answer5" value="A"><label for="option1">Cópia para outras pessoas</label></li>
-            <li><input type="radio" id="option2" name="answer5" value="B"><label for="option2">Colocar e-mail em espera</label></li>
-            <li><input type="radio" id="option3" name="answer5" value="C"><label for="option3">Confirmar o recebimento do e-mail</label></li>
+            <li><input type="radio" id="option1" name="answer5" value="A"><label for="option1">Acessar www.gmail.com, clicar em Criar conta, preencher as informações pessoais, escolher um nome de usuário e senha, e aceitar os termos de serviço.</label></li>
+            <li><input type="radio" id="option2" name="answer5" value="B"><label for="option2">Acessar www.gmail.com, clicar em Entrar e começar a usar o serviço.</label></li>
+            <li><input type="radio" id="option3" name="answer5" value="C"><label for="option3">Baixar o aplicativo do Gmail e fazer o login com uma conta existente.</label></li>
         </ul>
-        <button class="button" onclick="checkAnswer('answer5', 'A', 'Cópia para outras pessoas')">Verificar Resposta</button>
+        <button class="button" onclick="checkAnswer('answer5', 'A', 'Acessar www.gmail.com, clicar em Criar conta, preencher as informações pessoais, escolher um nome de usuário e senha, e aceitar os termos de serviço.')">Verificar Resposta</button>
         <div class="result" id="result5"></div>
+    </div>
+    
+    <div class="quiz-container">
+        <div class="question">Quais são as principais seções da interface do Gmail?</div>
+        <ul class="options">
+            <li><input type="radio" id="option1" name="answer6" value="A"><label for="option1">Caixa de Entrada, Rascunhos, Enviados, Lixo e Spam.</label></li>
+            <li><input type="radio" id="option2" name="answer6" value="B"><label for="option2">Agenda, Fotos, Mapas.</label></li>
+            <li><input type="radio" id="option3" name="answer6" value="C"><label for="option3">Notas, Anexos, Tarefas.</label></li>
+        </ul>
+        <button class="button" onclick="checkAnswer('answer6', 'A', 'Caixa de Entrada, Rascunhos, Enviados, Lixo e Spam.')">Verificar Resposta</button>
+        <div class="result" id="result6"></div>
+    </div>
+    
+    <div class="quiz-container">
+        <div class="question">Qual é a diferença entre CC e CCO ao enviar um e-mail?</div>
+        <ul class="options">
+            <li><input type="radio" id="option1" name="answer7" value="A"><label for="option1">CC envia uma cópia do e-mail para outras pessoas, que podem ver todos os destinatários. CCO envia cópias sem revelar os destinatários.</label></li>
+            <li><input type="radio" id="option2" name="answer7" value="B"><label for="option2">CC e CCO são a mesma coisa.</label></li>
+            <li><input type="radio" id="option3" name="answer7" value="C"><label for="option3">CC é usado para confirmar o recebimento do e-mail, enquanto CCO é usado para e-mails em espera.</label></li>
+        </ul>
+        <button class="button" onclick="checkAnswer('answer7', 'A', 'CC envia uma cópia do e-mail para outras pessoas, que podem ver todos os destinatários. CCO envia cópias sem revelar os destinatários.')">Verificar Resposta</button>
+        <div class="result" id="result7"></div>
+    </div>
+    
+    <div class="quiz-container">
+        <div class="question">Como anexar um arquivo a um e-mail no Gmail?</div>
+        <ul class="options">
+            <li><input type="radio" id="option1" name="answer8" value="A"><label for="option1">Clique no ícone de clipe (no computador ou smartphone) e selecione o arquivo que deseja anexar.</label></li>
+            <li><input type="radio" id="option2" name="answer8" value="B"><label for="option2">Copie e cole o arquivo no corpo do e-mail.</label></li>
+            <li><input type="radio" id="option3" name="answer8" value="C"><label for="option3">Clique no ícone de papel e insira o arquivo.</label></li>
+        </ul>
+        <button class="button" onclick="checkAnswer('answer8', 'A', 'Clique no ícone de clipe (no computador ou smartphone) e selecione o arquivo que deseja anexar.')">Verificar Resposta</button>
+        <div class="result" id="result8"></div>
     </div>
 
     <div class="score" id="score"></div>
