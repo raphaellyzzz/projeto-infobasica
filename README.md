@@ -1,7 +1,7 @@
 # Projeto: Curso Informática Básica para idosos
-Somos estudantes da turma 2024.1 de Análise e Desenvolvimento de Sistemas do IFPE. Nosso projeto final para a disciplina de Projeto Integrador 2 é um site dedicado a ensinar informática básica, com foco especial para pessoas idosas. Está explicado o uso de ferramentas essenciais como PowerPoint, Excel, Word e Gmail.
+O projeto final para a disciplina de Projeto Integrador 2 foi pensado por nossa professora para ser um site dedicado a ensinar informática básica, com foco especial para pessoas idosas. As equipes focaram em explicar o uso de ferramentas essenciais como PowerPoint, Excel, Word e Gmail.
 
-Foi decidido que a turma se dividiria em equipes, com cada grupo responsável por criar um conteúdo explicativo, visando melhorar o entendimento das ferramentas para pessoas idosas. Após a equipe definir os temas e produzir o conteúdo, comecei a criação do site com ajuda de um colega, estruturando-o para atender exatamente como meus colegas separaram nos seus documentos e utilizando um design simples para garantir uma fácil navegação. 
+Foi decidido que a turma se dividiria em equipes, com cada grupo responsável por criar um conteúdo explicativo, visando melhorar o entendimento das ferramentas para pessoas idosas. Após a equipe definir os temas e produzir todo o conteúdo, comecei a criação do site com ajuda de um colega, estruturando-o para atender exatamente como meus colegas separaram nos seus documentos e utilizando um design simples para garantir uma fácil navegação. 
 
 Coloquei todos os materiais numa pasta do drive para fácil acesso dos materiais, se necessário.
 <a href="https://drive.google.com/drive/folders/1Y6mukmFRDwkI1dJOzpBgXuZUESeSipSb?usp=drive_link" target="_blank">Apenas para e-mail institucional</a>
