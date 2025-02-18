@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="../img/word_icon.png">
+    <title>Quiz de Word</title>
+    <style>
+        :root {
+            --branco: #ffffff;
+            --cinza-claro: #f0f0f0;
+            --verde-claro: #a8e6a1;
+            --verde-escuro: #4caf50;
+            --preto: #000000;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--cinza-claro);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--branco);
+            color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        #home {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        #home:hover {
+            text-decoration: underline;
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options li {
+            margin-bottom: 10px;
+        }
+
+        .button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .score {
+            font-size: 20px;
+            color: green;
+            margin-top: 30px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: var(--branco);
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-weight: bold;
+            color: var(--verde-escuro);
+            font-size: 20px;
+            padding: 10px 20px;
+            transition: background-color 0.3s, transform 0.2s;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--verde-claro);
+        }
+
+        nav ul li a:active {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                margin-top: 20px;
+            }
+
+            nav.open ul {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+            }
+
+            nav ul li a {
+                font-size: 18px;
+            }
+        }
+        @keyframes jump {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        nav ul li a:active i {
+            animation: jump 0.1s ease-in-out;
+        }
+
+        nav ul li a i {
+            margin-right: 5px; 
+            transition: transform 0.5s;
+        }
+
+        nav ul li a:hover i {
+            transform: scale(1.4);
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="margin-left: 5%;">Quiz sobre o Word</h1>
+        <nav>
+            <ul>
+                <li><a href="../tutorials/word.html" id="word"><i class="fas fa-file-word"></i> Voltar ao tutorial</a></li>
+                <li><a href="../index.html" id="home"><i class="fas fa-home"></i> Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="quiz-container">
+        <div class="question">Qual é o objetivo do Módulo 1: Introdução ao Microsoft Word?</div>
+        <ul class="options">
+            <li><input type="radio" id="option1" name="answer1" value="A"><label for="option1">Ensinar a formatação de texto.</label></li>
+            <li><input type="radio" id="option2" name="answer1" value="B"><label for="option2">Familiarizar os alunos com o ambiente do Word e suas funcionalidades básicas.</label></li>
+            <li><input type="radio" id="option3" name="answer1" value="C"><label for="option3">Ensinar a inserção de imagens e tabelas.</label></li>
+            <li><input type="radio" id="option4" name="answer1" value="D"><label for="option4">Criar macros para automatizar tarefas repetitivas.</label></li>
+        </ul>
+        <button class="button" onclick="checkAnswer('answer1', 'B', 'Familiarizar os alunos com o ambiente do Word e suas funcionalidades básicas.')">Verificar Resposta</button>
+        <div class="result" id="result1"></div>
+    </div>
+    
+    <div class="quiz-container">
+        <div class="question">Qual dos tópicos NÃO é abordado no Módulo 2: Formatação de Texto Básica?</div>
+        <ul class="options">
+            <li><input type="radio" id="option1" name="answer2" value="A"><label for="option1">Alterando fonte, tamanho, cor e estilo.</label></li>
+            <li><input type="radio" id="option2" name="answer2" value="B"><label for="option2">Uso do corretor ortográfico e gramatical.</label></li>
+            <li><input type="radio" id="option3" name="answer2" value="C"><label for="option3">Alinhamento de texto.</label></li>
+            <li><input type="radio" id="option4" name="answer2" value="D"><label for="option4">Espaçamento entre linhas e parágrafos.</label></li>
+        </ul>
+        <button class="button" onclick="checkAnswer('answer2', 'B', 'Uso do corretor ortográfico e gramatical.')">Verificar Resposta</button>
+        <div class="result" id="result2"></div>
+    </div>
+    
+    <div class="quiz-container">
+        <div class="question">No Módulo 3: Inserindo Elementos no Documento, qual das opções a seguir é abordada?</div>
+        <ul class="options">
+            <li><input type="radio" id="option1" name="answer3" value="A"><label for="option1">Inserindo imagens e ajustando o tamanho.</label></li>
+            <li><input type="radio" id="option2" name="answer3" value="B"><label for="option2">Uso de citações e fontes bibliográficas.</label></li>
+            <li><input type="radio" id="option3" name="answer3" value="C"><label for="option3">Dividindo o documento em seções.</label></li>
+            <li><input type="radio" id="option4" name="answer3" value="D"><label for="option4">Protegendo o documento com senha.</label></li>
+        </ul>
+        <button class="button" onclick="checkAnswer('answer3', 'A', 'Inserindo imagens e ajustando o tamanho.')">Verificar Resposta</button>
+        <div class="result" id="result3"></div>
+    </div>
+    
+    <div class="quiz-container">
+        <div class="question">O que é ensinado no Módulo 7: Trabalhando com Referências e Citações?</div>
+        <ul class="options">
+            <li><input type="radio" id="option1" name="answer4" value="A"><label for="option1">Aplicando estilos de parágrafo.</label></li>
+            <li><input type="radio" id="option2" name="answer4" value="B"><label for="option2">Revisando o documento e aplicando o layout final.</label></li>
+            <li><input type="radio" id="option3" name="answer4" value="C"><label for="option3">Inserção de citações e fontes bibliográficas.</label></li>
+            <li><input type="radio" id="option4" name="answer4" value="D"><label for="option4">Gravando e executando macros.</label></li>
+        </ul>
+        <button class="button" onclick="checkAnswer('answer4', 'C', 'Inserção de citações e fontes bibliográficas.')">Verificar Resposta</button>
+        <div class="result" id="result4"></div>
+    </div>
+    
+    <div class="quiz-container">
+        <div class="question">Qual é um dos tópicos abordados no Módulo 10: Finalizando e Compartilhando Documentos?</div>
+        <ul class="options">
+            <li><input type="radio" id="option1" name="answer5" value="A"><label for="option1">Usando temas e cores predefinidas.</label></li>
+            <li><input type="radio" id="option2" name="answer5" value="B"><label for="option2">Preparando o documento para impressão.</label></li>
+            <li><input type="radio" id="option3" name="answer5" value="C"><label for="option3">Uso do painel de navegação.</label></li>
+            <li><input type="radio" id="option4" name="answer5" value="D"><label for="option4">Comentários e controle de alterações.</label></li>
+        </ul>
+        <button class="button" onclick="checkAnswer('answer5', 'B', 'Preparando o documento para impressão.')">Verificar Resposta</button>
+        <div class="result" id="result5"></div>
+    </div>
+
+    <script>
+        function checkAnswer(questionName, correctAnswer, explanation) {
+            const radios = document.getElementsByName(questionName);
+            let userAnswer = '';
+            for (const radio of radios) {
+                if (radio.checked) {
+                    userAnswer = radio.value;
+                    break;
+                }
+            }
+            
+            const resultElement = document.getElementById('result' + questionName.slice(-1));
+            
+            if (userAnswer === correctAnswer) {
+                resultElement.innerHTML = '<span style="color: green;">Correto! ' + explanation + '</span>';
+            } else {
+                resultElement.innerHTML = '<span style="color: red;">Incorreto! Tente novamente.</span>';
+            }
+        }
+    </script>
+</body>
+</html>

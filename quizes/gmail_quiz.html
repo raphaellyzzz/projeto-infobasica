@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Quiz sobre o Gmail">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="../img/gmail_icon.png">
     <title>Quiz de Gmail</title>
@@ -98,13 +97,102 @@
             color: green;
             margin-top: 30px;
         }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: var(--branco);
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-weight: bold;
+            color: var(--verde-escuro);
+            font-size: 20px;
+            padding: 10px 20px;
+            transition: background-color 0.3s, transform 0.2s;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--verde-claro);
+        }
+
+        nav ul li a:active {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                margin-top: 20px;
+            }
+
+            nav.open ul {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+            }
+
+            nav ul li a {
+                font-size: 18px;
+            }
+        }
+        @keyframes jump {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        nav ul li a:active i {
+            animation: jump 0.1s ease-in-out;
+        }
+
+        nav ul li a i {
+            margin-right: 5px; 
+            transition: transform 0.5s;
+        }
+
+        nav ul li a:hover i {
+            transform: scale(1.4);
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Quiz sobre o Gmail</h1>
-        <a href="../tutorials/gmail.html" id="gmail"><i class="fas fa-envelope"></i>Voltar ao tutorial!</a>
-        <a href="../tutorials/powerpoint.html" id="powerpoint"><i class="fas fa-file-powerpoint"></i> Seguir para PowerPoint</a>
+        <h1 style="margin-left: 5%;">Quiz sobre o Gmail</h1>
+        <nav> 
+            <ul> 
+                <li><a href="../tutorials/gmail.html" id="gmail"><i class="fas fa-envelope"></i> Voltar ao Tutorial</a></li>
+                <li><a href="../index.html" id="home"><i class="fas fa-home"></i> Home</a></li>
+            </ul> 
+        </nav>
     </header>
 
     <div class="quiz-container">
@@ -198,28 +286,23 @@
     <div class="score" id="score"></div>
 
     <script>
-        let score = 0;
-
-        function checkAnswer(questionName, correctAnswer, correctText) {
-            var resultElement = document.getElementById("result" + questionName.charAt(questionName.length - 1));
-            var selectedOption = document.querySelector('input[name="' + questionName + '"]:checked');
+        function checkAnswer(questionName, correctAnswer, explanation) {
+            const radios = document.getElementsByName(questionName);
+            let userAnswer = '';
+            for (const radio of radios) {
+                if (radio.checked) {
+                    userAnswer = radio.value;
+                    break;
+                }
+            }
             
-            if (!selectedOption) {
-                resultElement.innerHTML = "Por favor, selecione uma resposta.";
-                resultElement.style.color = "red";
-                return;
-            }
-
-            if (selectedOption.value === correctAnswer) {
-                resultElement.innerHTML = "Resposta correta! " + correctText;
-                resultElement.style.color = "green";
-                score++;
+            const resultElement = document.getElementById('result' + questionName.slice(-1));
+            
+            if (userAnswer === correctAnswer) {
+                resultElement.innerHTML = '<span style="color: green;">Correto! ' + explanation + '</span>';
             } else {
-                resultElement.innerHTML = "Resposta incorreta. A resposta correta é: " + correctText;
-                resultElement.style.color = "red";
+                resultElement.innerHTML = '<span style="color: red;">Incorreto! Tente novamente.</span>';
             }
-
-            document.getElementById("score").innerHTML = "Sua pontuação: " + score + " de 5";
         }
     </script>
 
